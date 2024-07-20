@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class Calculator {
 	public static void main(String[] args) {
-
+//Object 
 		Method m = new Method();
-
+//User Input
 		Scanner sc = new Scanner(System.in);
 
 		Scanner numbers = new Scanner(System.in);
 
 		Scanner sy = new Scanner(System.in);
-
+//Temporary variable
 		int add = 0, sub = 0, mul = 0;
-
 		double div = 0;
-
+//infinity Loop
 		while (true) {
+//condition			
 			if (add == 0 && sub == 0 && mul == 0 && div == 0) {
 				System.out.println("Press ON/OFF Button");
 			} else {
@@ -26,24 +26,25 @@ public class Calculator {
 
 			}
 			String a = "OFF";
+//Calculator on/off condition
 			String status = sc.nextLine();
 			if (!status.equalsIgnoreCase(a)) {
+//condition to check operation completed or not
 
 				if (add == 0 && sub == 0 && mul == 0 && div == 0) {
-
-					System.out.println("Calculator is ON");
-					System.out.println("Enter the Value");
-
+//condition true
+					System.out.println("Calculator is ON Enter the Value");
+					
 					int num = numbers.nextInt();
 
-					System.out.println("Enter the Symbal");
+					System.out.println("Enter the Symbol");
 
 					char symbal = sy.next().charAt(0);
 
 					System.out.println("Enter the Next Value");
 
 					int num1 = numbers.nextInt();
-
+//condition to check symbol
 					switch (symbal) {
 					case '+':
 						add = m.add(num, num1);
@@ -66,12 +67,14 @@ public class Calculator {
 						break;
 
 					default:
-						System.out.println("Enter the correct Symbal");
+						System.out.println("Enter the correct Symbol");
 
 					}
 
-				} else {
-					System.out.println("Enter the Symbal");
+				}
+//condition false
+				else {
+					System.out.println("Enter the Symbol");
 
 					char sy1 = sy.next().charAt(0);
 
@@ -104,7 +107,9 @@ public class Calculator {
 					}
 				}
 
-			} else {
+			}
+//Calculator off option to use break 
+			else {
 
 				System.out.println("Calculator is OFF");
 				break;
